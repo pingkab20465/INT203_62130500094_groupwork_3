@@ -21,7 +21,7 @@ const app = {
     },
     methods: {
         toggleLike(pic) {
-            console.log(pic);
+            //console.log(pic);
             pic[2]= !pic[2];
         }
     }

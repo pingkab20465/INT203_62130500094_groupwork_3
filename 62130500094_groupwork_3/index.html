@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Basic Vue Js - HelloWorld App</title>
+    <title>My Photo Gallery</title>
 
     <!-- https://google.github.io/material-design-icons/#icon-font-for-the-web -->
     <!-- Using via Google Web Fonts -->
@@ -18,16 +18,30 @@
     <!-- Vue CDN -->
     <script src="https://unpkg.com/vue@next"></script>
 
+    <style>
+        .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 1.5rem;
+        }
+    </style>
 </head>
 
 <body>
-    <div id="app" class="h-screen w-full bg-gray-200 flex items-start justify-start">
-        <img src="./images/1.jpg" class="w-1/3 h-full">
-        <div class="w-full flex items-center justify-end">
-            <i class="material-icons">face</i>
-            <p class="font-semibold text-xl tracking-wider uppercase px-3"> {{ msg }}</p>
+    <body id="app" class="bg-indigo-lightest font-sans">
+        <div class="flex justify-center mb-2">
+            <h1 class="text-4xl font-bold">Photo Gallery ({{countPics}})</h1>
         </div>
-    </div>
+        <h2 class="text-2xl font-bold ml-3 text-blue-600">Total Like(s): {{totalLikes}}</h2>
+        <div class="grid max-w-4xl mx-auto p-8">
+            <div v-for="pic in pics" class="bg-white rounded h-full text-grey-darkest no-underline shadow-md">
+                <button @click="toggleLike(pic)">
+                    <h1 class="text-3xl p-6">{{pic[1]}} <span v-show="pic[2]">❤️<span></h1>
+                    <img class="w-full block rounded-b" :src="pic[0]">
+                </button>
+            </div>
+        </div>
+    </body>
 
     <!-- my main.js -->
     <script src="./main.js"></script>

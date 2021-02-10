@@ -5,9 +5,6 @@ const app = {
                 ['./images/fox.jpg', 'Fox', false]
                 ,['./images/cloud.jpg', 'Cloud', false]
                 ,['./images/bird.jpg', 'Bird', false]
-                // ,['./images/others/man.jpg', 'Man', false]
-                // ,['./images/others/forest.jpg', 'Forest', false]
-                // ,['./images/others/reeds.jpg', 'Reeds', false]
             ]
         }
     },
@@ -21,7 +18,6 @@ const app = {
     },
     methods: {
         toggleLike(pic) {
-            //console.log(pic);
             pic[2]= !pic[2];
         }
     }
